@@ -1,0 +1,91 @@
+/* univeral selector */
+* {
+	border: 1px solid red;
+  }
+
+  /* type selector */
+p {
+	color: green;
+  }
+
+h1 {
+  color: maroon;
+}
+
+/* class selector */
+.title {
+	color: teal;
+  }
+
+  /* product of multiple class selector (<p class="title uppercase">) */
+.uppercase {
+	text-transform: uppercase;
+  }
+
+/* id selector */
+article-title {
+	font-family: cursive;
+  }
+
+/* Attribute selector */
+a[href*="florence"] {
+	color: lightgreen;
+  }
+  
+a[href*="beijing"] {
+	color: lightblue;
+  }
+  
+a[href*="seoul"] {
+	color: lightpink;
+  }
+
+/* Pseudo- class selector :focus, (:visited, :disabled, and :active) are all pseudo-classes */
+a:hover{
+	color: darkorange;
+  }
+
+/* Class and ID difference */
+.heading-background {
+	background-color: aqua;
+  }
+  
+  #publish-time {
+	color: gray
+  }
+
+  /* Specificity (ID , Class then Type - the code on the id selector would be displaced) */
+  h5 {
+	color: yellow;
+  }
+  
+  .author-class {
+	color: pink;
+  }
+  
+  #author-id {
+	color: cornflowerblue;
+  }
+
+  /* Chaining  (combined type and class selector*/
+  h2.destination {
+	font-family: Tahoma;
+  }
+  
+/* Descendant combinator */
+div.description h5 {
+	color: blueviolet;
+  }
+      /* OR */
+	  div.description h5 {
+		color: blueviolet;
+	  } 
+	  /* Chaining & Specificity */
+	  ul li h4 {
+		color: gold;
+	  }
+
+/* Multiple Selector */
+h5, h4, li {
+	font-family: monospace;
+  }

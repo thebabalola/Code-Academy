@@ -1,0 +1,110 @@
+Runtime Environment
+
+A runtime environment is where your program will be executed.
+It determines what global objects your program can access and it can also impact how it runs.
+
+Two types: - A Browser’s Runtime Environment (chrome & Firefox)
+			- The Node runtime environment
+
+Front-end JavaScript applications are executed in a browser’s runtime environment and have access to the window object.
+Back-end JavaScript applications are executed in the Node runtime environment and have access to the file system, databases, and networks attached to the server.
+
+
+1. Browser Runtime Environment
+
+<!-- my_website.html -->
+<html>
+  <body>
+    <h1> My Website </h1>
+    <script> window.alert('Hello World'); </script>
+  </body>
+</html>
+
+- The window.alert() method will create a pop-up box in your browser with the text "Hello World". 
+- The window.alert() method is built into this environment and any program executed in a browser has access to this method
+		Try replacing window.alert() with window.prompt() or window.confirm()
+
+N.B: 
+Applications created for and executed in the browser are known as front-end applications. 
+For a long time, JavaScript code could only be executed in a browser and was used exclusively for creating front-end applications. 
+In order to create back-end applications that could run on a computer WITHOUT a browser, you would need to use other programming languages such as Java or PHP.
+
+
+2. Node Runtime Environment
+
+// my-app.js
+console.log(process.env.PWD);
+
+In 2009, the Node runtime environment was created for the purpose of executing JavaScript code without a browser, 
+thus enabling programmers to create full-stack (front-end and back-end) applications using only the JavaScript language.
+
+- process is an object containing data relating to the JavaScript file being executed. 
+- process.env is an object containing environment variables such as process.env.PWD 
+   which contains the current working directory (and stands for “Print Working Directory”).
+
+N.B:
+To execute the JavaScript code in this file, first make sure that you have set up Node on your computer. 
+Then, open up a terminal and run the following command:
+
+$ node my-app.js
+/path/to/working/directory
+	- The node command tells your computer to execute the my-app.js file in the Node environment
+
+$ node
+> process.env.HOME
+'/home/ccuser'
+	- You can also use the node command without a file argument to open up the Node Read-Eval-Print-Loop (REPL):
+
+
+----- NODE -----
+
+What are Modules?
+	Modules are reusable pieces of code in a file (header.js, logic.js etc) that can be exported and then imported for use in another file. 
+	A modular program is one whose components can be separated, used individually, and recombined to create a complex system.
+
+	my_app.js -{	- server_logic.js
+					- math_function.js
+					- database_logic.js
+					- date_formatting.js
+	}
+
+Instead of having the entire program written within my_app.js, its components are broken up into separate modules that each handle a particular task. 
+For example, the database_logic.js module may contain code for storing and retrieving data from a database. 
+Meanwhile, the date_formatting.js module may contain functions designed to easily convert date values from one format to another (a common headache among programmers!).
+
+1. The Node runtime environment and the module.exports and require() syntax.
+2. The browser’s runtime environment and the ES6 import/export syntax.
+
+
+i. module.exports
+To create a module, you simply have to create a new file where the functions can be declared. 
+Then, to make these functions available to other files, add them as properties to the built-in module.exports object:
+
+/* converters.js */
+function celsiusToFahrenheit(celsius) {
+  return celsius * (9/5) + 32;
+}
+
+module.exports.celsiusToFahrenheit = celsiusToFahrenheit;
+
+module.exports.fahrenheitToCelsius = function(fahrenheit) {
+  return (fahrenheit - 32) * (5/9);
+};
+
+
+ii.  require()
+The require() function accepts a string as an argument. That string provides the file path to the module you would like to import.
+
+Let’s update water-limits.js such that it uses require() to import the .celsiusToFahrenheit() method from the module.exports object within converters.js:
+
+/* water-limits.js */
+const converters = require('./converters.js');
+
+const freezingPointC = 0;
+const boilingPointC = 100;
+
+const freezingPointF = converters.celsiusToFahrenheit(freezingPointC);
+const boilingPointF = converters.celsiusToFahrenheit(boilingPointC);
+
+console.log(`The freezing point of water in Fahrenheit is ${freezingPointF}`);
+console.log(`The boiling point of water in Fahrenheit is ${boilingPointF}`);
