@@ -1,4 +1,10 @@
-import React from 'react';
+import React from 'react'
+
+// Information that gets passed from one component to another is known as Props 
+
+// ----- Access a Component's props -----
+    /**/
+
 
 function PropsDisplayer(props) {
   const stringProps = JSON.stringify(props);

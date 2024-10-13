@@ -1,0 +1,315 @@
+/*
+There are two important components to a flexbox layout: 
+	- flex containers 
+	- flex items
+
+	flex container: (Parent element)is an element on a page that contains flex items
+	flex items: direct child elements of a flex container(parent element)
+
+flex container - takes the display: flex or inline flex 
+flex items - takes other properties, 
+*/
+
+/*
+display: flex  arranges by dfault on a row(horizontally) - block level
+display: block   arranges by default on a column(vertically), in stack - stacks on themselves.
+
+display:inline-flex  allows element to arrange in row, beside themselves
+
+
+ flex containers have two axes: a main axis and a cross axis. 
+ By default, the main axis is horizontal(row) and the cross axis is vertical(column).
+ main - justify-content
+		flex-wrap
+		flex-grow & flex shrink
+ cross - align-items
+		 align-content
+*/
+
+body {
+	border: 0;
+	margin: 0;
+	font-family: 'Roboto Mono', monospace;
+  }
+
+
+/*display: flex or inline-flex*/
+.parent {
+	display: flex;
+	flex-direction: column;
+}
+
+.inline{
+	display: inline-flex;
+	border: 1px dotted red;
+	/* width: 200px;
+	height: 200px; */
+}
+
+
+
+/* --- Flex Direction ---
+	N:B - is usually decalred on the flex container just like the Display: flex, block etc
+
+	row: left to right (top left corner)		row-reverse: right to left( top right corner)
+	colum: top to bottom (top left corner)		colum-reverse: bottom to top (bottom left corner)
+	
+*/
+.flex-direction {
+  background-color: dodgerblue;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 600px;
+}
+
+.box {
+  background-color: whitesmoke;
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+}
+
+
+
+/* Justify content */
+.containerJ {
+	height: 150px;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: whitesmoke;
+  }
+  
+  .box {
+	height: 75px;
+	width: 100px;
+	background-color: dodgerblue;
+	border: 1px solid lightgrey;
+	display: inline-block;
+  }
+
+/* Align items */
+.containerA {
+	height: 300px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: whitesmoke;
+  }
+
+.stretch {
+  min-height: 75px;
+  width: 125px;
+  background-color: dodgerblue;
+  border: 2px solid lightgrey;
+}
+
+
+/* ----- flex - wrap ----- 
+	flex-wrap used instead of flex grow, shrink and basis. 
+	And it accepts can three values - wrap, wrap-reverse, nowrap
+
+	wrap :- child elements of a flex container that don’t fit into a row will move down to the next line
+	wrap-reverse :- same as wrap, but the order of row is reversed.
+	nowrap :- prevents items from wrapping(This is the default value of flex-wrap)
+*/
+h1 {
+	text-align: center;
+  }
+
+.wrap {
+  background-color: dodgerblue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 125px;
+}
+
+.item {
+  background-color: whitesmoke;
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+}
+
+
+/* --- Align Content --- 
+align-items -  is for aligning elements within a single row, while
+align-contents is used to space lot of rows(multiple rows) in a flex container
+
+*/
+.align-content {
+	height: 300px;
+	width: 600px;
+	background-color: whitesmoke;
+	display: flex; 
+	flex-wrap: wrap;
+	align-content: space-around;
+	margin: auto;
+  }
+
+.left,
+.center,
+.right {
+  height: 75px;
+  width: 300px;
+  margin: 2px;
+  background-color: dodgerblue;
+  border: 2px solid lightgrey;
+}
+
+
+/* --- Flex-Flow ---
+	A property is used to declare both the flex-wrap and flex-direction properties in one line.
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+instead: 
+  .container {
+  display: flex;
+  flex-flow: column wrap;   //you can join two properties of direction and wrap together
+}
+*/
+.flex-flow{
+	background-color: dodgerblue;
+	display: flex;
+	flex-flow: row-reverse wrap;
+	height: 600px;
+  }
+  
+  .boxes {
+	background-color: whitesmoke;
+	border: 1px solid white;
+	width: 200px;
+	height: 200px;
+  }
+
+
+  /*  --- Nested Flexboxes ---
+  	So far, we’ve had multiple flex containers on the same page to explore flex 
+	item positioning. It is also possible to position flex containers inside of one another.
+  */
+  .main {
+	background-color: lightgrey;
+	width: 400px;
+	height: 700px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .nested-flexbox {
+	width: 300px;
+	height: 300px;
+	background-color: dodgerblue;
+	border: 1px solid white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .child {
+	height: 75px;
+	width: 75px;
+	background-color: whitesmoke;
+	border: 1px solid snow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+
+
+
+
+
+
+       /* --- THE BELOW ARE ARCHAIC and almost irrelevant ----*/
+/* ----- flex -grow ----- 
+	flex-grow property allows us to specify if items should grow to fill a container
+  	and also which items should grow proportionally more or less than others.
+	 -  default value of flex-grow is 0.
+
+	 note: min-height & width, and max-height and width , takes precedence over 
+	 flex-grow and shrink. As this shrinks only happens with parent elements
+	 		Also, margins are not usually affected, because they are outside a parent element
+*/
+.grow {
+	display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: dodgerblue;
+  border: 2px solid lightgrey;
+  margin: 10px 30px;
+}
+
+.middle-side {
+  /* flex-grow: 0, 1 or 2; */
+}
+
+.middle-center {
+  flex-grow: 1; /*grows while the rest would not*/
+}
+
+h2 {
+	text-align: center;
+  }
+
+/* ----- flex shrink ----- 
+	proportionate to flex-grow,  allows us to specify if items should shrink to fill a container
+		 default value of flex-shrink is 1.
+*/
+.shrink {
+	display: flex;
+	background-color: whitesmoke;
+	justify-content: center;
+	min-height: 200px;
+	align-items: center;
+  }
+
+.center-side {
+	flex-shrink: 2; /*shrinks while the rest would not*/
+}
+
+.center-center {
+	/* flex-shrink: 0; */
+}
+
+
+
+/* ----- flex Basis ----- 
+	Another way of specifying the width of a flex. 
+	flex-basis allows us to specify the width of an item before it stretches or shrinks.
+*/
+.container {
+  display: flex;
+}
+
+.side {
+  flex-grow: 1;
+  flex-basis: 100px;
+}
+
+.center {
+  flex-grow: 2;
+  flex-basis: 150px;
+}
+
+
+/* ----- flex ----- 
+	The flex property allows you to declare flex-grow, flex-shrink, flex-basis all in one line.
+*/
+
+.big {
+	flex: 2 1 150px;  /*flex grow = 2 , flex-shrink = 1, flex-basis =150px*/
+	flex: 1 20px;  /*flex grow = 2 , flex-basis = 1 only*/
+	flex: 2 1; 	/*flex grow = 2 , flex-shrink = 1 only*/
+  }
+  
+  .small {
+	flex: 1 2 100px;  /*This declares the three properties in one line*/
+  }

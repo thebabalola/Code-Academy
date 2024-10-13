@@ -275,7 +275,8 @@ root.render(<ul>{peopleList}</ul>);
 /* The following JSX expression:*/
 const h1 = <h1>Hello world</h1>;
 
-/* can be rewritten without JSX, like this:*/
+/*can be rewritten without JSX, like this:
+ Not really in use though*/
 const h2 = React.createElement(
 	"h",
 	null,

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex Box</title>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<!-- 
+	Display: flex or Box
+	Flex Direction : row, column etc
+
+	justify content
+	align items
+	flex wrap
+	align content
+	flex grow, shrink, Basis
+
+	flex-flow 
+	-->
+
+	<!-- Display: flex and Inline-flex -->
+	<div>
+		<div class="inline">
+			<h1 style="background-color: aquamarine;">i am your Head, hahaha!</h1>
+			<p style="background-color: blue;">i am a paragraph</p>
+		</div>
+		<div class="inline">
+			<h1 style="background-color: aquamarine;">i am your Head, hahaha!</h1>
+			<p style="background-color: blue;">i am a paragraph</p>
+		</div>
+	</div>
+
+	<div class="parent">
+		<div class="inline">
+			<h1 style="background-color: aquamarine;">i am your Head, hahaha!</h1>
+			<p style="background-color: blue;">i am a paragraph</p>
+		</div>
+		<div class="inline">
+			<h1 style="background-color: aquamarine;">i am your Head, hahaha!</h1>
+			<p style="background-color: blue;">i am a paragraph</p>
+		</div>
+	</div>
+
+	<!-- Flex Direction -->
+	<h1>Flex-Direction</h1>
+	<div class='flex-direction' id='row'>
+	  <div class='box'>
+		<h2>1</h2>
+	  </div>
+	  <div class='box'>
+		<h2>2</h2>
+	  </div>
+	  <div class='box'>
+		<h2>3</h2>
+	  </div>
+	  <div class='box'>
+		<h2>4</h2>
+	  </div>
+	  <div class='box'>
+		<h2>5</h2>
+	  </div>
+	</div>
+
+
+	<!-- Justify Content -->
+	<h1>Flex Start & Flex End, (Center), Space Around, Space Between, Space Evenly - this works horizontally</h1>
+	<div class='containerJ' id='flexstart'>
+	  <div class='box'></div>
+	  <div class='box'></div>
+	  <div class='box'></div>
+	</div>
+
+	<!-- Align item -->
+	<h1>Flex Start & Flex End, (Center), Stretch & Baseline - This works vertically</h1>
+	<div class='containerA' id='flexstart'>
+	  <div class='box'></div>
+	  <div class='box' class="stretch"></div>
+	  <div class='box'></div>
+	</div>
+
+
+	<!-- Flex-wrap -->
+	<h1>Flex - Wrap</h1>
+	<div class='wrap'>
+		<div class='item'>
+		  <h1>1</h1>
+		</div>
+		<div class='item'>
+		  <h1>2</h1>
+		</div>
+		<div class='item'>
+		  <h1>3</h1>
+		</div>
+		<div class='item'>
+			<h1>4</h1>
+		</div>
+		<div class='item'>
+			<h1>5</h1>
+		</div>
+	</div>
+
+	<!-- Align Content -->
+	<h1>Flex Start & Flex End, (Center), Space Around, Space Between, Stretch</h1>
+	<div class='align-content'>
+	  <div class='left'></div>
+	  <div class='center'></div>
+	  <div class='right'></div>
+	</div>
+
+
+
+	<!-- Flex Flow -->
+	<h1>Flex flow - flex Direction & Flex Wrap<h1>
+  <div class='flex-flow' id='row'>
+    <div class='boxes'>
+      <h2>1</h2>
+    </div>
+    <div class='boxes'>
+      <h2>2</h2>
+    </div>
+    <div class='boxes'>
+      <h2>3</h2>
+    </div>
+    <div class='boxes'>
+      <h2>4</h2>
+    </div>
+    <div class='boxes'>
+      <h2>5</h2>
+    </div>
+  </div>
+	
+	<!-- Nested flex-boxes -->
+	 <h1>Nested Flex-Boxes</h1>
+	<div class='main'>
+		<div class='nested-flexbox'>
+		  <div class='child'>
+			<h2>Child 1</h2>
+		  </div>
+		  <div class='child'>
+			<h2>Child 2</h2>
+		  </div>
+		  <div class='child'>
+			<h2>Child 3</h2>
+		  </div>
+		</div>
+		<div class='container'></div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Flex-grow -->
+	<h1>Flex grow</h1>
+	<div class='grow'>
+	  <div class='middle-side'>
+		<h2>1</h2>
+	  </div>
+	  <div class='middle-center'>
+		<h2>2</h2>
+	  </div>
+	  <div class='middle-side'>
+		<h2>3</h2>
+	  </div>
+	</div>
+	
+	
+	<!-- Flex-shrink -->
+	<h1>Flex Shrink</h1>
+	<div class='shrink'>
+	  <div class='center-side'>
+		<h2>1</h2>
+	  </div>
+	  <div class='center-center'>
+		<h2>2</h2>
+	  </div>
+	  <div class='center-side'>
+		<h2>3</h2>
+	  </div>
+	</div>
+
+	<!-- Flex Basis -->
+	<div class='basis'>
+		<div class='side'>
+		  <h1>Left side!</h1>
+		</div>
+		<div class='center'>
+		  <h1>Center!</h1>
+		</div>
+		<div class='side'>
+		  <h1>Right side!</h1>
+		</div>
+	  </div>
+</body>
+</html>

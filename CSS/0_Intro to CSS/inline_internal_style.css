@@ -40,7 +40,7 @@ a[href*="seoul"] {
 	color: lightpink;
   }
 
-/* Pseudo- class selector :focus, (:visited, :disabled, and :active) are all pseudo-classes */
+/* Pseudo- class selector :focus, (:focus, :visited, :disabled, and :active) are all pseudo-classes */
 a:hover{
 	color: darkorange;
   }
@@ -89,3 +89,48 @@ div.description h5 {
 h5, h4, li {
 	font-family: monospace;
   }
+
+
+/*
+Other Common Pseudo-Classes:
+:hover
+
+Applied when the user hovers over an element (e.g., with a mouse). Useful for changing styles on hover to indicate interactivity.
+Example:
+*/
+a:hover {
+  color: blue;
+}
+
+/*
+:focus
+
+Applied when an element gains focus, such as when a user clicks into an input field or uses the keyboard to navigate to it.
+Example:
+*/
+input:focus {
+  border-color: green;
+}
+
+
+/*
+:visited
+
+Applied to links that the user has already clicked on.
+Example:
+*/
+a:visited {
+  color: purple;
+}
+/*
+:disabled
+
+Applied to form elements that are disabled.
+Example:
+*/
+button:disabled {
+  background-color: gray;
+}
+/*
+These pseudo-classes are helpful for providing dynamic styling and user feedback during different states of interaction with elements.
+*/

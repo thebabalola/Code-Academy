@@ -1,0 +1,161 @@
+button {
+	display: block;
+	width: 300px;
+	padding: 31px 5px;
+	border-radius: 5px;
+	margin: 20% auto;
+	background-color: orange;
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 32px;
+	color: mintcream;
+	/*	--- transition duration and delay---
+		Duration - how lpong the transition should happen for.
+		Delay - Much like duration. Delay specifies the time to wait before starting the transition
+
+		To create a simple transition in CSS, we must specify two of the four aspects:
+		-The property that we want to transition.
+		- duration of the transition.
+	*/
+	transition-property: background-color;
+	transition-duration: 2s;
+  }
+  
+  button:hover {
+	background-color: limegreen;
+  }
+
+/*--- Timing Function ----
+   This describes the pace of the transition.
+
+ease-in — starts slow, accelerates quickly, stops abruptly
+ease-out — begins abruptly, slows down, and ends slowly
+ease-in-out — starts slow, gets fast in the middle, and ends slowly
+linear — constant speed throughout
+*/
+
+h1 {
+  font-size: 40px;
+}
+
+.game {
+  position: relative;
+  display: inline-block;
+  height: 60%;
+}
+
+.game img {
+  cursor: pointer;
+}
+
+.game .safari {
+  margin-top: 50px;
+  height: 430.188px;
+  width: 573.578px;
+}
+
+.game .gazelle {
+  position: absolute;
+  top: 260px;
+  left: 231px;
+  z-index: 1;
+  max-height: 50px;
+  transition-property: max-height;
+  transition-duration: 750ms;
+  /*timing function*/
+  transition-timing-function: linear;
+  /*delay - Much like duration. Delay specifies the time to wait before starting the transition*/
+  transition-delay: 250ms;
+}
+
+.game .gazelle:hover {
+  max-height: 180px;
+}
+
+
+
+/* --- Shorthand ---*/
+a:hover {
+	/* transition-property: color;
+	transition-duration: 1.5s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0.5s; */
+
+	transition: color 1.5s ease-in-out 0.5s;
+}
+
+
+/* --- Combinations ---
+	You can describe unique transitions for multiple properties, and combine them.
+*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+.button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: 100px;
+  line-height: 100px;
+  background-color: #34B3A0;
+  color: #fff;
+}
+
+.button span,
+.button .icon {
+  position: absolute;
+  display: block;
+  height: 100%;
+  text-align: center;
+}
+
+.button span {
+  width: 72%;
+  left: 0px;
+  line-height: inherit;
+  font-size: 22px;
+}
+
+.button .icon {
+  right: 0;
+  width: 28%;
+}
+
+.button .icon .fa {
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+/* new ruleset added */
+.button span, 
+.button div, 
+.button i {
+  transition: width 750ms ease-in 200ms, 
+              left 500ms ease-out 450ms,
+              font-size 950ms linear;
+}
+
+.icon {
+  width: 200px;
+  background-color: #1A7B72;
+}
+
+.button:hover span {
+  left: -72%;
+}
+
+.button:hover .icon {
+  width: 100%;
+}
+
+.button:hover .icon .fa {
+  font-size: 45px;
+}

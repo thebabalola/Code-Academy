@@ -148,7 +148,7 @@ the browser will require both media features to be true before it renders the CS
 		  width: 95%;
 	}
 }
-OR
+/*OR*/
 @media only screen and (min-width: 480px), (orientation: landscape) {
     /* CSS ruleset */
 }
