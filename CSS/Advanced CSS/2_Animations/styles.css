@@ -10,7 +10,7 @@ button {
 	font-size: 32px;
 	color: mintcream;
 	/*	--- transition duration and delay---
-		Duration - how lpong the transition should happen for.
+		Duration - how long the transition should happen for.
 		Delay - Much like duration. Delay specifies the time to wait before starting the transition
 
 		To create a simple transition in CSS, we must specify two of the four aspects:
