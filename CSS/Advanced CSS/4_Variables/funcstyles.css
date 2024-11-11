@@ -1,5 +1,4 @@
-/*
-FUNCTIONS IN CSS
+/*		---FUNCTIONS IN CSS ----
 in CSS we have access to a wide variety of predefined functions, which allow for expansive page styling.
 
 syntax: 
@@ -9,8 +8,33 @@ h1 {
 
 Functions are a type of CSS value that is inserted in the place of a hardcoded value of a CSS declaration. 
 Some functions can even take multiple arguments, generally each of which must be separated by a comma.
-*/
 
+Here’s a quick summary of each of these CSS functions:
+1. `calc(): - Used for mathematical calculations directly in CSS (e.g., `width: calc(100% - 50px);`).
+  			 - Combines units dynamically, useful for responsive designs.
+
+2. `min()`, `max()`, and `clamp()`
+   - `min(value1, value2, ...)`: Takes the smallest of given values (e.g., `min(50%, 300px)`).
+   - `max(value1, value2, ...)`: Takes the largest of given values (e.g., `max(20vw, 200px)`).
+   - `clamp(min, preferred, max)`: Defines a responsive range, limiting the value to stay between 
+   									a minimum and maximum (e.g., `clamp(1rem, 2vw + 1rem, 3rem)`).
+
+3. Color Functions
+   -`rgb(r, g, b)`: Defines colors using red, green, and blue values (0-255 each).
+   -`rgba(r, g, b, a)`: Adds an alpha (transparency) channel to `rgb` (0 is fully transparent, 1 is fully opaque).
+   -`hsl(hue, saturation, lightness)`: Defines colors by hue (0-360°), saturation (0-100%), and lightness (0-100%).
+   -`hsla(hue, saturation, lightness, alpha)`: Adds an alpha (transparency) channel to `hsl`.
+
+4. Filter and Backdrop-Filter Functions
+   - `brightness(value)`: Adjusts brightness (e.g., `brightness(0.5)` for 50% brightness, anything ounder 0 = darkness).
+   - `blur(value)`: Applies a blur effect (e.g., `blur(5px)`).
+   - `drop-shadow(offset-x, offset-y, blur-radius, color)`: Adds a shadow to an element’s image or video content.
+   - `backdrop-filter()`: Applies filters (e.g., blur, brightness) to the background behind an element (e.g., `backdrop-filter: blur(10px);`), often used on semi-transparent overlays.
+
+5. Transform Function: - Applies transformations like scaling, rotating, or moving elements in 2D or 3D space.
+   - Common examples: Scale(1.5), rotate(deg), translate(x, y)
+
+*/
 
 
 * {
@@ -105,6 +129,7 @@ Some functions can even take multiple arguments, generally each of which must be
 	left: 0;
 	letter-spacing: 2px;
 	border-radius: 8px 8px 0px 0px;
+	background: rgba(209, 207, 63, 0.3); /*red green blue alpha*/
   }
   
   .location-details i{
@@ -126,7 +151,8 @@ Some functions can even take multiple arguments, generally each of which must be
   }
   
   .card-body {
-	background: #fff;
+	/* background: #fff; */
+	background: rgb(255, 247, 255); /*red green blue*/
 	padding: 2rem 3rem;
 	position: relative;
   }
@@ -165,7 +191,8 @@ Some functions can even take multiple arguments, generally each of which must be
   
   .card-title {
 	padding: 5px 0;
-	font-size: 3rem;
+	/* font-size: 3rem; */
+	font-size: calc(2vw + 1.5rem);	/*creates a responsive font size that adjusts with the viewport width while maintaining a minimum base size of 1.5rem for readability.*/
 	line-height: 1;
 	text-align: center;
 	margin-bottom: .5em;

@@ -1,0 +1,187 @@
+/* ---- Web Accessibility ----
+
+Visual Readability: Scale
+	font-size:a minimum size between 18 to 20 pixels is recommended.
+	line-height: Thedeafault value in browsers is around.
+	letter-spacing: provides additional visual clarity by controlling the space between individual letters in a word—the value of letter-spacing. (for example, 0.5em).
+
+Visual Readability: Structure
+	Text alignment: Text align(left, right, center, justify) and paragraph width
+	min-width and max-width: 45ch;
+
+Visual Readability: Color 
+	That is the difference in colour contrast between the bigge and lower content
+
+Contextual Readability: Interactivity
+	- <abbr title='Cascading Style Sheets'> CSS </abbr>
+	As a provider of the information, a web page should make the full definition available to users.
+	when you hover above the CSS text, it proceeds to show you it full meaning
+
+	Alternatively- text-decoration: underline OR  cursor: pointer;
+
+Contextual Readability: Color
+	e,g  a:visited {color: purple;},  a:hover {color: orange;}, a:active {color: green;},  a:focus {border-color: blue;}
+
+Visibility: Inevitably, at some point, web page will need to hide content from users somehow.
+			wee can use - visibility: hidden;  or  display: none;
+	e.g 	<p class='hidden-sentence' aria-hidden='true'>This is hidden from screen readers!</p>
+
+Design Reflecting Structure: 
+	arrange how you want the screen to read to those with visual impairment. column, column reverse, etc
+
+Accessibility Across Mediums:
+	setting media query for; print, screen or all. - check media query at the bottom for useage
+
+*/
+
+
+html {
+	height: 100%
+  }
+  
+  body {
+	height: 100%;
+	margin: 0;
+  }
+  
+  p {
+	/* font-size: 12px; */
+	/* line-height: 1; */
+	font-size: 20px;
+	line-height: 1.5;
+	letter-spacing: 0.05em;
+  }
+  
+  a {
+	/* text-decoration: none; */
+	text-decoration: underline;
+  }
+  a:visited {
+	color: purple;
+  }
+  
+  input[type='text'] {
+	display: block;
+	width: 100%;
+	border-color: #808080;
+	outline: none;
+	border-style: solid;
+	padding: 10px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+  }
+  input[type="text"]:focus {
+	border-color: blue;
+  }
+  
+  nav {
+	background: lightgray;
+	width: 100%;
+	height: 10%;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	justify-content: space-between;
+	box-sizing: border-box;
+  }
+  
+  h2 {
+	margin: 0
+  }
+  
+  .nav-link {
+	text-decoration: none;
+	color: #000000
+  }
+  
+  .page-container {
+	padding: 30px;
+	display: flex;
+	height: 90%;
+	box-sizing: border-box;
+	flex-direction: column;
+  }
+  
+  .form-title {
+	text-align: center;
+	box-sizing: border-box;
+  }
+  
+  .instructions {
+	text-align: left;
+	min-width: 45ch;
+	max-width: 85ch;
+  }
+  
+  .form-container {
+	display: flex;
+	width: 100%;
+	height: 80vh;
+	flex-direction: column;
+	padding: 40px;
+	box-sizing: border-box;
+  }
+  
+  .survey-form {
+	/* background: #C3C3C3;
+	color: #C4C4C4; */
+	background: #C3C3C3;
+	color: #000000;
+	display: flex;
+	flex: 2;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 30px 20px;
+  }
+
+  .survey-form input {
+	border-color: #000000;
+  }
+  
+  .survey-btn-container {
+	display: flex;
+	height: 10%;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	padding: 0 20px;
+  }
+  
+  .btn {
+	height: 50px;
+	width: 47%;
+  }
+
+  .btn:hover {
+	cursor: pointer;
+  }
+  
+  .protected-link-container {
+	text-align: right;
+	padding: 20px 0;
+	visibility: hidden;
+  }
+  
+  .input-container {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .input-container label {
+	padding: 5px 0;
+	font-size: 20px;
+  }
+
+
+  @media print {
+	nav {
+	  display: none;
+	}  /*This displays the href attribute when printed so the user can still have access to the link*/
+
+	a[href^="http"]:after {
+		content: " (" attr(href) ")";
+	  }	/* This removes the nav bar when the age is about to be printed */
+  }
+
+  

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pleasant Cafe</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href='./styles.css' rel='stylesheet'>
+</head>
+<body>
+
+	<!-- Visit browserdefaultstyles.com and look up the <strong> element and other elements. 
+		How is the default style of the element different between Chrome and Firefox? -->
+	<div class='header'>
+		<span id='title'><strong>Pleasant</strong> Cafe</span>
+		<ul class='nav'>
+			<li class='nav-item'>Home</li>
+			<li class='nav-item'>Menus</li>
+			<li class='nav-item'>Location</li>
+		</ul>
+	</div>
+
+	<div class='main-img'></div>
+
+	<!-- For polyfill -->
+	<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+
+
+	<!-- Let’s take a moment to review what we learned:
+	- We can check whether a CSS feature is available on specific browsers using tools like caniuse.com.
+	- Browsers have default styles which we can check using resources like browserdefaultstyles.com.
+	- We sometimes need to use browser-specific prefixes, especially for new CSS features.
+	- Polyfills provide a way to support newer web features on older browsers. -->
+</body>
+</html>

@@ -1,0 +1,110 @@
+/*   --- WEB COMPATIBIITY ---
+
+---- Checking Availability ----
+The availability of CSS features differs across browsers and their versions. Using a CSS property supported 
+only on select browsers will create inconsistent experiences for users. Thankfully, there are tools such as 
+caniuse.com that can help you find out what browsers support a particular CSS feature.
+
+Task one:
+Take a look at the caniuse.com website on the right. Search for “CSS Reflections”. 
+Why might the reflected image not show up in Firefox?
+	Answer: Notice that the CSS Reflections feature is not supported for all versions of Firefox.
+
+
+----- Browser Defaults -----
+Browsers are based on browser engines—the core component responsible for rendering HTML, CSS, and JavaScript 
+in the browser. For example, Chrome, Opera, and Edge use Blink as their browser engine, whereas Firefox uses 
+Gecko and Safari uses Webkit. Each of these engines renders features such as margins, padding, colors, or text 
+slightly differently. This is because different browsers have different default styles.
+
+	- We can use tools such as browserdefaultstyles.com to compare default styles across browsers.
+	- There are also tools that we can use, such as normalize.css and minireset.css, to eliminate differences 
+	between browser default styles and ensure that all elements are rendered the same way across browsers.
+
+
+	Below at the Bottom: - Vendor Prefixes
+						- Polyfills <in script file in the html>
+
+*/
+
+html{
+	height: 100%;
+  overflow-x: hidden;
+}
+
+body{
+	height: 100%;
+	margin: 0px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.header{
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  width: 400px;
+  margin: auto;
+}
+
+#title{
+	font-size: 62px;
+}
+
+ul{
+	list-style-image: url('bean.png');
+}
+
+li:hover{
+	cursor: pointer;
+	background: chocolate;
+	color: beige;
+}
+
+strong{
+	/* color: chocolate; */
+	font-weight: bold;
+	background: url('flowers.jpg');
+	background-size: cover;
+	background-clip: text;   /*The above images to be shown in text*/
+	
+	-webkit-background-clip: text;	/* Set background-clip to text with approporate prefix for Chrome */
+	color: transparent;
+}
+
+.main-img {
+  width: 1000px;
+  height: 550px;
+  background: url('coffee.png'), url('plant-left.png'), url('plant-right.png');
+  background-blend-mode: multiply;
+  margin: 62px auto;
+  -webkit-box-reflect: below;
+}
+
+
+
+
+/*
+----- Vendor Prefixes ----
+Vendor prefixes are prefixes for property names that were developed as a way of testing new CSS features or 
+standards before browsers fully supported them. These prefixes were never intended to be used on production 
+websites, but they are sometimes required to use certain new and cutting-edge features or to support older 
+versions of browsers when those features were cutting edge.
+
+Common vendor prefixes include:
+-webkit- for Chrome, Safari, newer versions of Opera, and almost all iOS browsers, including Firefox for iOS
+-moz- for Firefox
+-ms- for Internet Explorer and Microsoft Edge
+-o- for old pre-WebKit versions of Opera
+
+Rather than looking through every CSS feature on your site to determine which features require vendor prefixes,
+ you can also use tools such as 'Autoprefixer'.com to automatically include all vendor prefixes for the features that require them.
+
+
+----- Polyfills ----
+It’s can be very difficult to keep track of which CSS properties are not supported in certain browsers and their versions. 
+Polyfills are JavaScript codes that allow older browsers to behave as though they understand more advanced 
+features than they actually do. These codes rewrite the HTML and CSS codes to simulate features that have 
+not yet been adopted by that version of the browser.
+
+we can use tools such as 'Modernizr' or 'Polyfill.io' to automatically identify and provide all of the polyfills that our website might need, ensuring that it can run as smoothly as possible on older browsers.
+*/
