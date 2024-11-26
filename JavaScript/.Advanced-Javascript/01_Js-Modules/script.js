@@ -25,3 +25,28 @@ A runtime environment is where your program will be executed.
 
 
 // --- Implementing Modules in Node ---
+	/* Modules are reusable pieces of code in a file that can be exported and then imported for use in another file
+			my_app.js - math_function.js
+						database_logic.js
+						server_logic.js
+						date_formatting.js
+
+		Each of the above files, handles different particular task, and are then imported into the app.js.
+		This modular strategy is sometimes called separation of concerns and is useful for several reason
+
+		Others: - Node.js module.exports object to export code from a file
+				- Node.js require() function to import functions and/or data from another module
+	*/
+
+
+
+// --- Implementing Modules in javascript: Nodejs vs ES6
+	/*  In JavaScript, there are two runtime environments and each has a preferred module implementation:
+		1. The browser’s runtime environment and the ES6 import/export syntax.
+		2. The Node runtime environment and the module.exports and require() syntax.
+
+	 */
+	
+	// Implementing Modules in Node
+
+	
