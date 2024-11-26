@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+  
+<body onclick="newStyle();">
+
+	<p class="centered" id="logo">Codecademy</p>
+	
+	<section class = "container">
+  	<img src = "/-img/pexels-bg0.jpg" id= "myImage">
+  	<p onclick="blooming()">Codecademy</p>
+	</section>
+
+  <!-- The script element  -->
+   <script src="./script.js"></script>
+  <script>
+	function blooming() {
+		var image = document.getElementById('myImage');
+		if (image.src.match("pexels-bg0")) {
+		  image.src = "pexels-bg3";
+		} else {
+		  image.src = "pexels-bg0.png";
+		}	
+	  }	
+	  
+  </script>
+</body>  
+</html>
