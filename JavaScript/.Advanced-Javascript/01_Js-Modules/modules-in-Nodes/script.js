@@ -24,6 +24,7 @@ A runtime environment is where your program will be executed.
 
 
 
+
 // --- Implementing Modules in Node ---
 	/* Modules are reusable pieces of code in a file that can be exported and then imported for use in another file
 			my_app.js - math_function.js
@@ -40,13 +41,64 @@ A runtime environment is where your program will be executed.
 
 
 
-// --- Implementing Modules in javascript: Nodejs vs ES6
+// --- Implementing Modules in javascript: Nodejs vs ES6 ---
 	/*  In JavaScript, there are two runtime environments and each has a preferred module implementation:
 		1. The browser’s runtime environment and the ES6 import/export syntax.
 		2. The Node runtime environment and the module.exports and require() syntax.
 
 	 */
-	
-	// Implementing Modules in Node
 
+
+
+	// - Implementing Modules in Node -
+		//Every JavaScript file that runs in a Node environment is treated as a distinct module. 
+		//The functions and data defined within each module can be used by any other module, as long as those resources are properly exported and imported.
+
+	/* Regualr Function */
+	function celsiusToFahrenheit(celsius) {
+		return celsius * (9/5) + 32;
+	  }
+	  
+	  const freezingPointC = 0;
+	  const boilingPointC = 100;
+	  
+	  console.log(celsiusToFahrenheit(23));
+
+
+
+	// - Module.exports -
+	  	// module.exports is an object that is built-in to the Node.js runtime environment.
+		// Other files can now import this functions, with the require() function.
+
+	/* Converter.js */	
+	function celsiusToFahren(celsius) {  //function to conver cel - fah declared
+		return celsius * (9/5) + 32;
+	  }
+	  
+	  module.exports.celsiusToFahren = celsiusToFahren; //already defined function exported
+	  module.exports.fahrenheitToCels = function(fahrenheit) { //newly defined function exported
+		return (fahrenheit - 32) * (5/9);
+	  };
+
+
+	
+	// - Require() -
+	  	// The require() function accepts a string as an argument. That string provides the file path to the module you would like to import.
+
+		/* Water-Limit.js */
+		  const converters = require('./converters.js');
+
+		  const freezingPointCel = 0;
+		  const boilingPointCel = 100;
+		  
+		  const freezingPointFah = converters.celsiusToFahrenheit(freezingPointC);
+		  const boilingPointFah = converters.celsiusToFahrenheit(boilingPointC);
+		  
+		  console.log(`The freezing point of water in Fahrenheit is ${freezingPointFah}`);
+		  console.log(`The boiling point of water in Fahrenheit is ${boilingPointFah}`);
+
+
+
+
+// --- Implementing Modules in Browsers (ES6)---
 	
