@@ -1,5 +1,11 @@
 /* ES6 Import Syntax */
 import { changeToFunkyBg, changeToFunkycolor } from "./script.js";
+import importedResources from './module.js';	//imports default or all function stored in an object,  from another file
+
+import { greet as greetEspanol } from './greetEsp.js';	//this helps differenciate two function of the same name, from one another
+import { greet as greetEnglish } from './greetEng.js';
+
+
 
 
 
@@ -35,5 +41,20 @@ buttonElement.addEventListener('click', () => {
 });
 
 
+
+
 /* ES6 Named Export Syntax */
 export { showHiddenImg, toggleHiddenElement}; 
+
+	/* -others- 
+	const toBeExported = {
+	changeToFunkyBg,
+	changeToFunkyColor
+  }
+  
+	export default toBeExported;  //combines all function into one file and export it
+
+	export default changeToFunkyColor;	//	useful when export just one function
+
+	export default {changeToFunkyColor, .....};	 // export multipree specific functions
+	*/

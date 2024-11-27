@@ -4,6 +4,7 @@
 import {showHiddenImg, toggleHiddenElement} from './xsecret-messages.js';
 
 
+
 // --- Exports ---
 
 export const changeToFunkyBg = (imgElement) => {
@@ -20,5 +21,12 @@ const changeToFunkyColor = (domElement) => {
   }
 
 
-export default changeToFunkyColor;	//	useful when export just one function
+//OR
+const toBeExported = {
+	changeToFunkyBg,
+	changeToFunkyColor
+  }
+  
+export default toBeExported;
+// export default changeToFunkyColor;	//	useful when export just one function
 // export default {changeToFunkyColor, .....};	|	useful when you are exportiung more than one function
